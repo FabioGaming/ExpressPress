@@ -19,3 +19,8 @@ To get a full view on the project scope [check out this document](./ProjectScope
 |Lucide|Icon Library|Will be used for having easy access to icons in the project|
 |PrimeNG|UI Library|Will be used as the primary to create the design|
 |Prisma|ORM|Will be used on the backend to connect and interact with the PostgreSQL database|
+
+---
+
+#### Documenation
+To view this applications documenation [check out this document](./docs/DocumentationIndex.md)
