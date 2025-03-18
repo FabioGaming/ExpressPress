@@ -8,7 +8,7 @@ To get a full view on the project scope [check out this document](./ProjectScope
 
 ---
 
-##### Tech stacl / Dependencies
+##### Tech stack / Dependencies
 |Name|Type|Purpose|
 |----|----|-------|
 |PostgreSQL|Database|Will serve as this projects database|
@@ -16,3 +16,6 @@ To get a full view on the project scope [check out this document](./ProjectScope
 |Express|Library|Will be used to create this projects backend REST API|
 |Angular|Framework|Will be used to create this projects web frontend|
 |SCSS/SASS|CSS extension|Will be used to style this projects website|
+|Lucide|Icon Library|Will be used for having easy access to icons in the project|
+|PrimeNG|UI Library|Will be used as the primary to create the design|
+|Prisma|ORM|Will be used on the backend to connect and interact with the PostgreSQL database|
