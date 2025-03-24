@@ -25,4 +25,6 @@ Body:
 ---
 
 #### Deleting a blog
+DELETE /blogs/:blogId
 
+---
