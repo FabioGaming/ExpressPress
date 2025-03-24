@@ -17,3 +17,7 @@ All endpoints are prefixed with /api/
   - [Getting information about the current account](./api/account-management.md#getting-account-information)
   - [Deleting the current account](./api/account-management.md#deleting-the-current-account)
   - [Getting Blogs of the current user](./api/account-management.md#getting-the-current-accounts-posted-blogs)
+- [Blog Management](./api/blogging-management.md)
+  - [Creating a blog](./api/blogging-management.md#creating-a-blog)
+  - [Editing a blog](./api/blogging-management.md#editing-a-blog)
+  - [Deleting a blog](./api/blogging-management.md#deleting-a-blog)
