@@ -24,3 +24,5 @@ All endpoints are prefixed with /api/
 - [User Actions](./api/user-actions.md)
   - [Getting recent blogs](./api/user-actions.md#get-recently-posted-blogs)
   - [Searching for blogs](./api/user-actions.md#search-for-blogs)
+  - [Getting a users profile](./api/user-actions.md#getting-a-users-profile)
+  - [Getting a users blogs](./api/user-actions.md#getting-a-users-blogs)
