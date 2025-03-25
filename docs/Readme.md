@@ -23,3 +23,4 @@ All endpoints are prefixed with /api/
   - [Deleting a blog](./api/blogging-management.md#deleting-a-blog)
 - [User Actions](./api/user-actions.md)
   - [Getting recent blogs](./api/user-actions.md#get-recently-posted-blogs)
+  - [Searching for blogs](./api/user-actions.md#search-for-blogs)

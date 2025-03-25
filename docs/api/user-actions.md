@@ -8,3 +8,13 @@ Query:
 |count|number|The amount of blogs you want to fetch|No|
 
 ---
+
+#### Search for blogs
+GET /blogs/search
+
+Query:
+|Field|Type|Description|Required|
+|-----|----|-----------|--------|
+|query|string|The query string you want to look for|Yes|
+
+---
