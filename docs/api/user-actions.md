@@ -32,3 +32,5 @@ Query:
 |-----|----|-----------|--------|
 |index|number|The index where you want to start fetching blogs from|No|
 |count|number|The amount of blogs you want to fetch|No|
+
+---

@@ -26,3 +26,6 @@ All endpoints are prefixed with /api/
   - [Searching for blogs](./api/user-actions.md#search-for-blogs)
   - [Getting a users profile](./api/user-actions.md#getting-a-users-profile)
   - [Getting a users blogs](./api/user-actions.md#getting-a-users-blogs)
+- [Utility endpoints](./api/utility-endpoints.md)
+  - [Uploading media to the server](./api/utility-endpoints.md#uploading-media)
+  - [Fetching media](./api/utility-endpoints.md#getting-a-media-file-from-ID)
