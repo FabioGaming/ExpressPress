@@ -21,3 +21,17 @@
 |modified_at|timestamp|The timestamp at which the profile was last modified|N/A|
 
 ---
+
+#### Blogs
+|Field|Type|Description|Additional Information|
+|-----|----|-----------|----------------------|
+|blog_id|uuid|The ID of the blog|primary key|
+|author_id|uuid|The ID of the profile that posted the blog|[linked to](#userprofiles)|
+|title|string|The title of the blog|N/A|
+|content|string|The content of the blog|N/A|
+|tags|string[]|A list of tags set for the blog|N/A|
+|thumbnail_media_id|string|The media ID of the thumbnail|[linked to](#)|
+|created_at|timestamp|The timestamp at which the blog was created at|N/A|
+|modified_at|timestamp|The timestamp at which the blog was last modified at|N/A|
+
+---
