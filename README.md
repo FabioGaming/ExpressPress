@@ -23,4 +23,4 @@ To get a full view on the project scope [check out this document](./ProjectScope
 ---
 
 #### Documenation
-To view this applications documenation [check out this document](./docs/DocumentationIndex.md)
+To view this applications documenation [check out this document](./docs/Readme.md)

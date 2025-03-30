@@ -1,0 +1,49 @@
+Project ExpressPress {
+  database_type: "PostgreSQL"
+  Note: "An open source blogging platform built on Angular and Express"
+}
+
+Table UserSignin {
+  user_id uuid [primary key]
+  signup_strategy_type SignupStrategies
+  signup_account_id string [unique]
+  created_at timestamp
+  modified_at timestamp
+  refresh_token string
+  linked_profile_id string [not null, ref: > UserProfiles.profile_id]
+}
+
+Table UserProfiles {
+  profile_id uuid [primary key]
+  user_name string
+  user_slug string [unique]
+  profile_icon_media_id string [ref: > MediaData.media_id]
+  created_at timestamp
+  modified_at timestamp
+}
+
+Table Blogs {
+  blog_id uuid [primary key]
+  author_id uuid [not null, ref: > UserProfiles.profile_id]
+  title string [not null]
+  content string [not null]
+  tags string[] [null]
+  thumbnail_media_id string [null, ref: > MediaData.media_id]
+  created_at timestamp
+  modified_at timestamp
+}
+
+Table MediaData {
+  media_id uuid [primary key]
+  mime_type string
+  file_data blob
+  author_id uuid [not null, ref: > UserProfiles.profile_id]
+  created_at timestamp
+  file_size int
+}
+
+
+Enum SignupStrategies {
+  DISCORD
+  GOOGLE
+}
