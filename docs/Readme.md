@@ -4,7 +4,11 @@ This document contains an overview of the ExpressPress documentation
 ---
 
 ##### Database Schemas
-- TBD
+- [Database schemas](./database/database-schemas.md)
+  - [User Signins](./database/database-schemas.md#usersignin)
+  - [User Profiles](./database/database-schemas.md#userprofiles)
+  - [Blogs](./database/database-schemas.md#blogs)
+  - [Media Data](./database/database-schemas.md#mediadata)
 
 ---
 
