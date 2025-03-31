@@ -1,4 +1,7 @@
 import express, { Request, Response } from "express";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const port: number = Number(process.env.APPLICATION_PORT) ?? 3000;
 
