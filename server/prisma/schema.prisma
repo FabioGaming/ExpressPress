@@ -25,7 +25,20 @@ model UserSignins {
   createdAt          DateTime         @default(now()) @map("created_at")
   modifiedAt         DateTime         @default(now()) @map("modified_at")
   refreshToken       String           @unique @map("refresh_token")
-  linked_profile_id  String           @unique @map("linked_profile_id")
+  linkedProfileId    String           @unique @map("linked_profile_id")
+  linkedProfile      UserProfiles     @relation(fields: [linkedProfileId], references: [profileId])
 
   @@map("user_signins")
+}
+
+model UserProfiles {
+  profileId          String       @id @default(cuid()) @map("profile_id")
+  userName           String       @map("user_name")
+  userSlug           String       @unique @map("user_slug")
+  profileIconMediaId String       @map("profile_icon_media_id")
+  createdAt          DateTime     @default(now()) @map("created_at")
+  modifiedAt         DateTime     @default(now()) @map("modified_at")
+  UserSignins        UserSignins?
+
+  @@map("user_profiles")
 }
