@@ -22,8 +22,8 @@ model UserSignins {
   userId             String           @id @default(cuid()) @map("user_id")
   signupStrategyType SignupStrategies @map("signup_strategy_type")
   signupAccountId    String           @unique
-  createdAt          DateTime         @map("created_at")
-  modifiedAt         DateTime         @map("modified_at")
+  createdAt          DateTime         @default(now()) @map("created_at")
+  modifiedAt         DateTime         @default(now()) @map("modified_at")
   refreshToken       String           @unique @map("refresh_token")
   linked_profile_id  String           @unique @map("linked_profile_id")
 
