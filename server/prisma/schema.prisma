@@ -26,7 +26,7 @@ model UserSignins {
   modifiedAt         DateTime         @default(now()) @map("modified_at")
   refreshToken       String           @unique @map("refresh_token")
   linkedProfileId    String           @unique @map("linked_profile_id")
-  linkedProfile      UserProfiles     @relation(fields: [linkedProfileId], references: [profileId])
+  linkedProfile      UserProfiles     @relation(fields: [linkedProfileId], references: [profileId], onDelete: Cascade)
 
   @@map("user_signins")
 }
@@ -40,31 +40,34 @@ model UserProfiles {
   modifiedAt         DateTime     @default(now()) @map("modified_at")
   UserSignins        UserSignins?
   MediaData          MediaData[]  @relation(name: "UploadedMedia")
+  Blogs              Blogs[]
 
   @@map("user_profiles")
 }
 
 model MediaData {
-  mediaId       String       @id @default(cuid()) @map("media_id")
-  mimeType      String       @map("mime_type")
-  fileData      Bytes        @map("file_data")
-  authorId      String       @map("author_id")
-  createdAt     DateTime     @default(now()) @map("created_at")
-  fileSize      Int          @default(0) @map("file_size")
-  AuthorProfile UserProfiles @relation(name: "UploadedMedia", fields: [authorId], references: [profileId])
+  mediaId   String   @id @default(cuid()) @map("media_id")
+  mimeType  String   @map("mime_type")
+  fileData  Bytes    @map("file_data")
+  authorId  String   @map("author_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  fileSize  Int      @default(0) @map("file_size")
+
+  AuthorProfile UserProfiles @relation(name: "UploadedMedia", fields: [authorId], references: [profileId], onDelete: Cascade)
 
   @@map("media_data")
 }
 
 model Blogs {
-  blogId           String   @id @default(cuid()) @map("blog_id")
-  authorId         String   @map("author_id")
-  title            String   @map("blog_title")
-  content          String   @map("blog_content")
-  tags             String[] @map("blog_tags")
-  thumbnailMediaId String   @map("blog_thumbnail_media_id")
-  createdAt        DateTime @default(now()) @map("created_at")
-  modifiedAt       DateTime @default(now()) @map("modified_time")
+  blogId           String       @id @default(cuid()) @map("blog_id")
+  authorId         String       @map("author_id")
+  title            String       @map("blog_title")
+  content          String       @map("blog_content")
+  tags             String[]     @map("blog_tags")
+  thumbnailMediaId String       @map("blog_thumbnail_media_id")
+  createdAt        DateTime     @default(now()) @map("created_at")
+  modifiedAt       DateTime     @default(now()) @map("modified_time")
+  AuthorProfile    UserProfiles @relation(fields: [authorId], references: [profileId], onDelete: Cascade)
 
   @@map("blogs")
 }
