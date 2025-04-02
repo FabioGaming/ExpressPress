@@ -39,6 +39,17 @@ model UserProfiles {
   createdAt          DateTime     @default(now()) @map("created_at")
   modifiedAt         DateTime     @default(now()) @map("modified_at")
   UserSignins        UserSignins?
+  MediaData          MediaData[]  @relation(name: "UploadedMedia")
 
   @@map("user_profiles")
+}
+
+model MediaData {
+  mediaId       String       @id @default(cuid()) @map("media_id")
+  mimeType      String       @map("mime_type")
+  fileData      Bytes        @map("file_data")
+  authorId      String       @map("author_id")
+  createdAt     DateTime     @default(now()) @map("created_at")
+  fileSize      Int          @default(0) @map("file_size")
+  AuthorProfile UserProfiles @relation(name: "UploadedMedia", fields: [authorId], references: [profileId])
 }
