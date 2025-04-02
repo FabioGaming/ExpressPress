@@ -52,4 +52,6 @@ model MediaData {
   createdAt     DateTime     @default(now()) @map("created_at")
   fileSize      Int          @default(0) @map("file_size")
   AuthorProfile UserProfiles @relation(name: "UploadedMedia", fields: [authorId], references: [profileId])
+
+  @@map("media_data")
 }
