@@ -55,3 +55,16 @@ model MediaData {
 
   @@map("media_data")
 }
+
+model Blogs {
+  blogId           String   @id @default(cuid()) @map("blog_id")
+  authorId         String   @map("author_id")
+  title            String   @map("blog_title")
+  content          String   @map("blog_content")
+  tags             String[] @map("blog_tags")
+  thumbnailMediaId String   @map("blog_thumbnail_media_id")
+  createdAt        DateTime @default(now()) @map("created_at")
+  modifiedAt       DateTime @default(now()) @map("modified_time")
+
+  @@map("blogs")
+}
