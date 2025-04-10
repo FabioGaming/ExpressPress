@@ -1,12 +1,21 @@
-import express, { Request, Response } from "express";
 import dotenv from "dotenv";
+import app from "./app";
+import prisma from "./config/database";
 
 dotenv.config();
 
-const port: number = Number(process.env.APPLICATION_PORT) ?? 3000;
+const PORT = process.env.APPLICATION_PORT || 3000;
 
-const app = express();
+async function startServer() {
+  try {
+    prisma.$connect();
+    console.log("Database connection successful!");
 
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
-});
+    app.listen(PORT, () => {
+      console.log(`Server is running on port: ${PORT}`);
+    });
+  } catch (error) {
+    console.log("Unable to connect to database, stopping server.");
+    process.exit(1);
+  }
+}

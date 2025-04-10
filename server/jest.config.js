@@ -3,6 +3,6 @@ module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
   moduleFileExtensions: ["ts", "js"],
-  testMatch: ["**/__tests__/**/*.test.ts"],
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  testMatch: ["**/__TESTS__/**/*.test.ts"],
+  setupFilesAfterEnv: ["<rootDir>/src/__TESTS__/setup.ts"],
 };
